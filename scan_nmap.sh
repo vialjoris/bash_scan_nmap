@@ -23,7 +23,8 @@ function usage(){
   exit 1; 
 }
 
-function scan_nmap(){    
+function scan_nmap(){
+    mkdir -p ./reports
     echo "Scanning with vulners script ..."
     nmap -sV --script vulners --script-args mincvss=5.0 -oA "./reports/reports" "$@"
 }
